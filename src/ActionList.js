@@ -1,24 +1,9 @@
 import React from 'react';
-// import logo from './logo.svg';
-import './App.css';
-import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
 
-import { Paper, Grid, Select, MenuItem } from '@material-ui/core';
-
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-
-import AccountCircle from '@material-ui/icons/AccountCircle';
-// import Switch from '@material-ui/core/Switch';
-// import FormControlLabel from '@material-ui/core/FormControlLabel';
-// import FormGroup from '@material-ui/core/FormGroup';
-
-import Menu from '@material-ui/core/Menu';
+import { Paper, Grid } from '@material-ui/core';
+import { teal, blueGrey } from '@material-ui/core/colors/';
 
 import { makeStyles } from '@material-ui/core/styles';
-import { whileStatement } from '@babel/types';
 
 const useStyles = makeStyles(theme => ({
   wrapper: {
@@ -28,8 +13,32 @@ const useStyles = makeStyles(theme => ({
     padding: theme.spacing(2),
     backgroundColor: 'white',
   },
-
+  header: {
+    fontWeight: 800,
+    marginBottom: theme.spacing(2),
+  },
+  actionBlock: {
+    padding: theme.spacing(1),
+    backgroundColor: teal[300],
+  },
+  block: {
+    padding: theme.spacing(1),
+    backgroundColor: blueGrey[100],
+  },
 }));
+
+const actions = [
+  {
+      "id": "appointment",
+      "action_name": "Назначить встречу",
+      "arguments": ["время", "специалист"]
+  },
+  {
+      "id": "rebook",
+      "action_name": "Перенести встречу",
+      "arguments": ["исходное время", "Финальное время"]
+  },
+];
 
 const ActionList = () => {
   const classes = useStyles();
@@ -37,8 +46,26 @@ const ActionList = () => {
   return (
     <Grid container direction="row" justify="center" alignItems="center" >
       <Paper elevation4 className={classes.wrapper}>
-        <Grid xs={12}>
-         
+        <Grid container spacing={4} item xs={12} className={classes.header}>
+          <Grid item xs={4}>Call to action</Grid>
+          <Grid item xs={8}>Subjects</Grid>
+        </Grid>
+        <Grid container spacing={2} xs={12}>
+          {actions.map(action => (
+            <Grid container spacing={4} item xs={12}>
+              <Grid item xs={4}> 
+                <Paper className={classes.actionBlock} elevation4>{action.action_name}</Paper>
+              </Grid>
+              <Grid item container spacing={2} xs={8}> 
+                {action.arguments.map(argument => (            
+                  <Grid direction="row" item> 
+                    <Paper className={classes.block} elevation4>{argument}</Paper>
+                  </Grid>
+                ))}
+                
+              </Grid>
+            </Grid>
+          ))}
         </Grid>
       </Paper>
     </Grid>
