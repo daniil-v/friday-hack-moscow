@@ -33,6 +33,7 @@ const useStyles = makeStyles(theme => ({
 const ActionList = () => {
   const classes = useStyles();
   const [ actions, setActions ] = useState([]);
+
   useEffect(() => { setActions(getActions()) }, []);
 
   const getActions = () => {

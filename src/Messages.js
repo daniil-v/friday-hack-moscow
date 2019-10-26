@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { Paper, Grid, Divider } from '@material-ui/core';
 import { blueGrey, blue } from '@material-ui/core/colors/';
@@ -8,6 +8,7 @@ import ChatIcon from '@material-ui/icons/Chat';
 import CallIcon from '@material-ui/icons/Call';
 import { makeStyles } from '@material-ui/core/styles';
 
+const axious = require('axios');
 
 const useStyles = makeStyles(theme => ({
   wrapper: {
@@ -31,55 +32,25 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-const messages = [
-  {
-    id: 'm0',
-    user_id: 'u0',
-    user_name: 'User name',
-    message_text: 'I want to order delivery tommorow any time',
-    spelled_out: true,
-    action: 'book delivery on october 28',
-    date_time: '2019-10-26 13:51:50',
-  },
-  {
-    id: 'm1',
-    user_id: 'u1',
-    user_name: 'One more user',
-    message_text: 'jkjhkggfjh jkgkgkljiy uotigjh yiigjhftudf gggjyigiygyi',
-    spelled_out: false,
-    action: '',
-    date_time: '2019-10-27 10:23:27',
-  },
-  {
-    id: 'm2',
-    user_id: 'u2',
-    user_name: 'Third user name',
-    message_text: 'Book me tommorow 2 pm',
-    spelled_out: true,
-    action: 'book delivery on october 28, 14:00',
-    date_time: '2019-10-27 10:23:27',
-  },
-  {
-    id: 'm3',
-    user_id: 'u1',
-    user_name: 'One more user',
-    message_text: 'jkjhkggfjh jjjjkgkgkljiy uotigjh  yiigjhftudf gggjyigiygyikgkgkljiy uotigjh yiigjhftudf gggjyigiygyikgkgkljiy uotigjh yiigjhftudf gggjyigiygyikgkgkljiy uotigjh yiigjhftudf gggjyigiygyikgkgkljiy uotigjh yiigjhftudf gggjyigiygyi',
-    spelled_out: false,
-    action: '',
-    date_time: '2019-10-27 10:23:27',
-  },
-];
-
 const Messages = () => {
   const classes = useStyles();
+
+  const [ messages, setMessages ] = useState([]);
+
+  useEffect(() => { setMessages(getMessages()) }, []);
+
+  const getMessages = () => {
+    axious.get(`http://84.201.146.49:8000/messages/`)
+      .then(({ data }) => { setMessages(data) });
+  }
 
   return (
     <Grid container direction="row" justify="center" alignItems="flex-start" >
       <Paper elevation={2} className={classes.wrapper}>
         <Grid container spacing={2}>
-          {messages.map(message => (
+          {messages && messages.map(message => (
             <Grid container spacing={4} item xs={12} key={`message_${message.id}`}>
-              <Grid item xs={8}>
+              <Grid item xs={12}>
                 <Paper className={classes.block} elevation={2}>
                   <Grid container direction="row" justify="space-between" alignItems="flex-start">
                     <Grid item xs={1}><AccountCircle className={classes.icon}/></Grid>
