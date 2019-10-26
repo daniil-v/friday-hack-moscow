@@ -78,8 +78,8 @@ const App = () => {
           )}
         </Toolbar>
       </AppBar>
-      {/* <ActionList /> */}
-      <Messages />
+      <ActionList />
+      {/* <Messages /> */}
     </div>
   );
 }
