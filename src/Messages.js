@@ -37,7 +37,12 @@ const Messages = () => {
 
   const [ messages, setMessages ] = useState([]);
 
-  useEffect(() => { setMessages(getMessages()) }, []);
+  useEffect(() => {
+    setInterval(async () => {
+      await getMessages();
+    }, 3000);
+    return () => clearInterval();
+  }, []);
 
   const getMessages = () => {
     axious.get(`http://84.201.146.49:8000/messages/`)
