@@ -2,7 +2,7 @@
   "name": "friday-hack-moscow",
   "version": "0.1.0",
   "private": false,
-  "homepage": "https://github.com/daniil-v/friday-hack-moscow/",
+  "homepage": "http://daniil-v.github.io/friday-hack-moscow/",
   "dependencies": {
     "@material-ui/core": "^4.5.1",
     "@material-ui/icons": "^4.5.1",

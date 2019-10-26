@@ -39,7 +39,7 @@ const ActionList = () => {
   useEffect(() => { setActions(getActions()) }, []);
 
   const getActions = () => {
-    axious.get(`http://84.201.146.49:8000/actions/1`)
+    axious.get(` https://cors-anywhere.herokuapp.com/http://84.201.146.49:8000/actions/1`)
       .then(({ data }) => { setActions(data) });
   }
 
