@@ -46,9 +46,10 @@ const Messages = () => {
   const [ messages, setMessages ] = useState([]);
 
   // useEffect(() => {
+  //   getMessages();
   //   setInterval(async () => {
   //     await getMessages();
-  //   }, 3000);
+  //   }, 10000);
   //   return () => clearInterval();
   // }, []);
 
