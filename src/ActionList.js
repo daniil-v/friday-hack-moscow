@@ -39,14 +39,16 @@ const ActionList = () => {
   useEffect(() => { setActions(getActions()) }, []);
 
   const getActions = () => {
-    axious.get(` https://cors-anywhere.herokuapp.com/http://84.201.146.49:8000/actions/1`)
-      .then(({ data }) => { setActions(data) });
+    axious.get(` https://cors-anywhere.herokuapp.com/http://84.201.146.49:8000/actions/2`)
+      .then(({ data }) => { setActions(JSON.parse(data)) });
   }
 
   return (
     <Grid container item xs={12} direction="row" justify="center" alignItems="center" >
       <Grid item xs={8}>
         <Paper elevation={2} className={classes.wrapper}>
+          <h4>{actions && actions.length && actions[0].company_name} </h4>
+
           <Grid container spacing={4} item xs={12} className={classes.header}>
             <Grid item xs={4}>Call to action</Grid>
             <Grid item xs={8}>Subjects</Grid>
