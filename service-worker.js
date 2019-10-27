@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/friday-hack-moscow/precache-manifest.4e6068e324272cca67014bae45a7e8a4.js"
+  "/friday-hack-moscow/precache-manifest.3f308acc3fc42db22b97cac9086f4d2a.js"
 );
 
 self.addEventListener('message', (event) => {
