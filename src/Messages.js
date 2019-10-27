@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 
-import { Paper, Grid, Divider, LinearProgress } from '@material-ui/core';
+import { Paper, Grid, Divider, LinearProgress, IconButton } from '@material-ui/core';
 import { blueGrey, blue, orange } from '@material-ui/core/colors/';
 
 import AccountCircle from '@material-ui/icons/AccountCircle';
-
+import AutorenewIcon from '@material-ui/icons/Autorenew';
 import ChatIcon from '@material-ui/icons/Chat';
 import CallIcon from '@material-ui/icons/Call';
 import { makeStyles } from '@material-ui/core/styles';
@@ -45,14 +45,18 @@ const Messages = () => {
 
   const [ messages, setMessages ] = useState([]);
 
-  useEffect(() => {
-    setInterval(async () => {
-      await getMessages();
-    }, 3000);
-    return () => clearInterval();
-  }, []);
+  // useEffect(() => {
+  //   getMessages();
+  //   setInterval(async () => {
+  //     await getMessages();
+  //   }, 10000);
+  //   return () => clearInterval();
+  // }, []);
+
+  useEffect(() => {getMessages()}, []);
 
   const getMessages = () => {
+    // axious.get(`http://84.201.146.49:8000/messages/2`)
     axious.get(`https://cors-anywhere.herokuapp.com/http://84.201.146.49:8000/messages/2`)
       .then(({ data }) => { setMessages(JSON.parse(data)); });
   }
@@ -61,7 +65,10 @@ const Messages = () => {
     <Grid container direction="row" justify="center" alignItems="flex-start" >
       <Grid container item direction="row" justify="center" alignItems="flex-start" xs={5} /* style={{width: '60vw'}} */>
         <Paper elevation={2} className={classes.wrapper}>
-          <div className={classes.header}>Upcoming appointments</div>
+          <IconButton onClick={() => {getMessages()}} >
+            <AutorenewIcon />
+          </IconButton>
+         <span className={classes.header}>Upcoming appointments</span>
           {(!messages || !messages.length) && <LinearProgress />}
           <Grid container spacing={2}>
             {messages && messages.map(message => (

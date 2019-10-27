@@ -1,6 +1,5 @@
 import React from 'react';
 
-import { Paper, Grid, Select, MenuItem } from '@material-ui/core';
 import {Chart} from 'react-google-charts';
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -18,11 +17,11 @@ const ScheduleChart = () => {
       <>
        <div className={classes.header}>Schedule</div>
       <Chart
-  width={'100%'}
-  height={'400px'}
-  chartType="Gantt"
-  loader={<div>Loading Chart</div>}
-  data={[
+        width={'100%'}
+        height={'400px'}
+        chartType="Gantt"
+        loader={<div>Loading Chart</div>}
+        data={[
           [
             { type: 'string', label: 'Task ID' },
             { type: 'string', label: 'Task Name' },
