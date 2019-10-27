@@ -26,6 +26,7 @@ const useStyles = makeStyles(theme => ({
   root: {
     textAlign: 'left',
     backgroundColor: theme.palette.grey[100],
+    height: '100%',
   },
   appBar: {
     zIndex: 9999,
