@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/friday-hack-moscow/static/css/main.34de6062.chunk.css",
-    "main.js": "/friday-hack-moscow/static/js/main.69fa7299.chunk.js",
-    "main.js.map": "/friday-hack-moscow/static/js/main.69fa7299.chunk.js.map",
+    "main.js": "/friday-hack-moscow/static/js/main.9443d89c.chunk.js",
+    "main.js.map": "/friday-hack-moscow/static/js/main.9443d89c.chunk.js.map",
     "runtime-main.js": "/friday-hack-moscow/static/js/runtime-main.b8d8ff64.js",
     "runtime-main.js.map": "/friday-hack-moscow/static/js/runtime-main.b8d8ff64.js.map",
     "static/js/2.7cd6c0a4.chunk.js": "/friday-hack-moscow/static/js/2.7cd6c0a4.chunk.js",
     "static/js/2.7cd6c0a4.chunk.js.map": "/friday-hack-moscow/static/js/2.7cd6c0a4.chunk.js.map",
     "index.html": "/friday-hack-moscow/index.html",
-    "precache-manifest.3d90e3b3f83072602c2890b1bed474c9.js": "/friday-hack-moscow/precache-manifest.3d90e3b3f83072602c2890b1bed474c9.js",
+    "precache-manifest.4f17e9da3da1f3e8e773c121daf9afb1.js": "/friday-hack-moscow/precache-manifest.4f17e9da3da1f3e8e773c121daf9afb1.js",
     "service-worker.js": "/friday-hack-moscow/service-worker.js",
     "static/css/main.34de6062.chunk.css.map": "/friday-hack-moscow/static/css/main.34de6062.chunk.css.map"
   },
@@ -16,6 +16,6 @@
     "static/js/runtime-main.b8d8ff64.js",
     "static/js/2.7cd6c0a4.chunk.js",
     "static/css/main.34de6062.chunk.css",
-    "static/js/main.69fa7299.chunk.js"
+    "static/js/main.9443d89c.chunk.js"
   ]
 }
