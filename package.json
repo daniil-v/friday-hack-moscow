@@ -1,7 +1,8 @@
 {
-  "name": "FridayHackMoscow",
+  "name": "friday-hack-moscow",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
+  "homepage": "http://daniil-v.github.io/friday-hack-moscow/",
   "dependencies": {
     "@material-ui/core": "^4.5.1",
     "@material-ui/icons": "^4.5.1",
@@ -10,6 +11,7 @@
     "query-string": "^6.2.0",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
+    "react-google-charts": "^3.0.15",
     "react-scripts": "3.2.0"
   },
   "scripts": {
@@ -18,7 +20,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "firebase-init": "firebase login && firebase init",
-    "deploy": "npm run build && firebase deploy --project couse-project-react-battle"
+    "deploy": "npm run build && firebase deploy --project couse-project-react-battle",
+    "deploy-ghp": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
