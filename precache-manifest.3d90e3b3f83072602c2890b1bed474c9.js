@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "f838fd5ee9f23412e438eeb00477563a",
+    "revision": "bc38a90fcac8831f34b1e2d1a34cb323",
     "url": "/friday-hack-moscow/index.html"
   },
   {
-    "revision": "10d909ab34c6a0b74e8f",
+    "revision": "989ceedbb5eefaeceae8",
     "url": "/friday-hack-moscow/static/css/main.34de6062.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/friday-hack-moscow/static/js/2.7cd6c0a4.chunk.js"
   },
   {
-    "revision": "10d909ab34c6a0b74e8f",
-    "url": "/friday-hack-moscow/static/js/main.ebfde3c1.chunk.js"
+    "revision": "989ceedbb5eefaeceae8",
+    "url": "/friday-hack-moscow/static/js/main.69fa7299.chunk.js"
   },
   {
     "revision": "3ad2a7f9edf6a9574198",
